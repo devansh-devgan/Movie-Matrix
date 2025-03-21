@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Spinner from "./Spinner";
 import MovieCard from "./MovieCard";
 import { useDebounce } from "react-use";
@@ -21,7 +21,6 @@ export default function MovieList({ searchTerm }) {
   const [isLoading, setIsLoading] = useState(false);
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
 
-  const movieSectionRef = useRef(null);
 
   useDebounce(() => setDebouncedSearchTerm(searchTerm), 600, [searchTerm]);
 
